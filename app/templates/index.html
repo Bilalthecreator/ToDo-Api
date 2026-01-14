@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App - Task Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Auth Section -->
+    <div id="auth-section" class="container">
+        <div class="glass-card auth-card">
+            <div class="heading">
+                <h1>ToDo App</h1>
+                <img class="img1" src="/static/css/bud.png">
+            </div>
+            <div class="auth-tabs">
+                <button class="tab-btn active" onclick="showLogin()">Login</button>
+                <button class="tab-btn" onclick="showRegister()">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form">
+                <div class="form-group">
+                    <input type="text" id="login-username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <input type="text" id="register-username" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="register-email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="register-password" placeholder="Password" required>
+                    <div id="password-requirements" class="password-requirements" style="display: none;">
+                        <div id="req-length" class="requirement invalid">At least 8 characters</div>
+                        <div id="req-uppercase" class="requirement invalid">One uppercase letter</div>
+                        <div id="req-lowercase" class="requirement invalid">One lowercase letter</div>
+                        <div id="req-number" class="requirement invalid">One number</div>
+                        <div id="req-special" class="requirement invalid">One special character (@$!%*?&)</div>
+                    </div>
+                </div>
+                <button type="submit" class="btn-primary">Register</button>
+            </form>
+            <div id="auth-message" class="message"></div>
+        </div>
+    </div>
+
+    <!-- Main App Section -->
+    <div id="app-section" class="container" style="display: none;">
+        <!-- Header -->
+        <div class="glass-card header-card">
+            <div class="header-content">
+                <h1>My Tasks</h1>
+                <div class="user-info">
+                    <span id="username-display"></span>
+                    <button onclick="logout()" class="btn-secondary">Logout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Groups Management -->
+        <div class="glass-card section-card">
+            <h2>Groups</h2>
+            <div class="group-input">
+                <input type="text" id="new-group-name" placeholder="New group name">
+                <button onclick="createGroup()" class="btn-primary">Add Group</button>
+            </div>
+            <div id="groups-list" class="groups-container"></div>
+        </div>
+
+        <!-- Tasks Management -->
+        <div class="glass-card section-card">
+            <h2>Tasks</h2>
+            <div class="task-filters">
+                <select id="filter-group">
+                    <option value="">All Groups</option>
+                </select>
+                <select id="filter-completed">
+                    <option value="">All Tasks</option>
+                    <option value="false">Incomplete</option>
+                    <option value="true">Completed</option>
+                </select>
+                <button onclick="filterTasks()" class="btn-secondary">Filter</button>
+            </div>
+
+            <div class="task-input">
+                <input type="text" id="new-task-title" placeholder="Task title">
+                <input type="text" id="new-task-description" placeholder="Description (optional)">
+                <select id="new-task-group">
+                    <option value="">Select Group</option>
+                </select>
+                <button onclick="createTask()" class="btn-primary">Add Task</button>
+            </div>
+
+            <div id="tasks-list" class="tasks-container"></div>
+        </div>
+
+        <div id="app-message" class="message"></div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
