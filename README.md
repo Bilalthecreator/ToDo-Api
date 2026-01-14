@@ -6,7 +6,7 @@ A RESTful API built with FastAPI for managing tasks with group organization and 
 
 **Deployed Application:** [https://todo-api-lu26.onrender.com](https://todo-api-lu26.onrender.com)
 
-**API Documentation:** [https://todo-api-lu26.onrender.com/docs](https://todo-api-lu26.onrender.com/docs)
+
 
 ## ✨ Features
 
