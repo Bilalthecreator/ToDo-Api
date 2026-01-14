@@ -72,7 +72,6 @@ A RESTful API built with FastAPI for managing tasks with group organization and 
 
 5. **Access the application**
    - Web Interface: http://127.0.0.1:8000
-   - API Documentation: http://127.0.0.1:8000/docs
 
 ## 📚 API Endpoints
 
@@ -250,7 +249,7 @@ aiofiles==24.1.0
 ## 👤 Author
 
 **Bilal Ahmed**
-- GitHub: [@fa21-bcs-002-code](https://github.com/fa21-bcs-002-code)
+
 
 ## 📄 License
 
@@ -260,4 +259,4 @@ This project was created as part of a backend developer assignment.
 
 **Live URL:** https://todo-api-lu26.onrender.com
 
-**Repository:** https://github.com/fa21-bcs-002-code/ToDo-Api
+
